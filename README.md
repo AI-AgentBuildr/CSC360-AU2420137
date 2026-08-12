@@ -1,4 +1,4 @@
-CSC360 - Computer Graphics & Digital Image Processing
+**CSC360 - Computer Graphics & Digital Image Processing**
 
 Reflection journal and study notes for Dev Patel AU2420137
 
