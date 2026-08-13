@@ -29,3 +29,10 @@ We need to write our first Java 2D program:
 - Draw a triangle on screen.
 - Make the triangle follow the mouse as it moves around.
 - Apply geometric transformations to it — specifically translation (moving it) and scaling (making it bigger/smaller, like a zoom effect).
+
+- # Questions for Professor
+
+### Lecture 01 (Aug 9, 2026)
+- [ ] For our Java 2D project, is it better to use Swing or JavaFX for handling the mouse listener events and transformations?
+- [ ] When using calculus to draw smooth curves, how does the computer convert those continuous math functions into discrete pixels on screen?
+      
