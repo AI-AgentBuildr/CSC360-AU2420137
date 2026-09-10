@@ -1,7 +1,7 @@
 # Personal Reflection: Session 7 – Java Artifacts, Automated Builds, and Text Encoding
 
 **Session Date:** 27/08/26  
-**Entry Date:** 31/08/26  
+
 
 ---
 
