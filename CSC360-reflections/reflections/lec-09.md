@@ -1,31 +1,47 @@
-# Personal Reflection: Session 9 – Headless Servers, TDD Methodology, and Thread Safety
+# Lecture 09 Reflection — Sept 3, 2026
 
-**Session Date:** 03/09/26  
+## 📋 TODO / Topics Covered (Revision Checklist)
 
-
----
-
-## What I Learned & Key Takeaways
-
-In Session 9, we continued project reviews and explored key engineering practices. We clarified the difference between console ASCII printing (character layout) and JavaFX canvas rendering (coordinate mapping). Sketching our project tree on paper first saved significant coding time.
-
-We then covered headless systems—servers operating without a physical display or GUI. Since cloud infrastructure runs headlessly, SSH key authentication is essential, giving direct command-line access without the overhead of remote desktop software.
-
-We also introduced Test-Driven Development (TDD) and its Red-Green-Refactor cycle:
-
-1. **RED:** Write a failing test before writing implementation code.
-2. **GREEN:** Write the minimal code needed to pass the test.
-3. **REFACTOR:** Clean up code while keeping tests passing.
-
-Writing tests first acts as a functional spec, clarifying requirements early in the process.
-
-Finally, we discussed thread safety. Force-stopping active threads risks corrupting shared memory. Using graceful cancellation flags signals background tasks to stop safely at predefined checkpoints.
+- [ ] Understand the difference between console ASCII printing (character layout) and JavaFX canvas rendering (coordinate mapping)
+- [ ] Sketch a project's tree structure on paper before coding, to save time later
+- [ ] Understand what a headless server is and why cloud infrastructure runs headlessly
+- [ ] Understand why SSH key authentication is used for headless command-line access
+- [ ] Learn the Test-Driven Development (TDD) Red-Green-Refactor cycle
+- [ ] Understand safe thread cancellation vs. force-stopping active threads
 
 ---
 
-## Core Takeaways
+## ❓ Class Questions & Detailed Answers
 
-* **Text vs. Pixel Rendering:** Console ASCII formatting and graphical coordinate rendering require distinct programming methods.
-* **Headless Architecture:** Remote servers operate without displays; SSH key authentication is the standard tool for command-line management.
-* **TDD Approach:** Writing unit tests first clarifies requirements and ensures verified behavior during development.
-* **Safe Concurrency:** Use graceful thread cancellation flags rather than force-stopping active background tasks.
+### Q1: What's the difference between console ASCII printing and JavaFX canvas rendering?
+
+* **Console ASCII printing** is about character layout — placing text characters (like `├──`, `└──`) in the correct order and indentation to represent structure.
+* **JavaFX canvas rendering** is about coordinate mapping — placing shapes and pixels at specific `(x, y)` positions on screen.
+* These require fundamentally different programming approaches, even when representing the same underlying data (e.g., a tree structure).
+* **Practical tip:** sketching the project's tree structure on paper first, before writing any code, saves significant time by clarifying the layout logic in advance.
+
+### Q2: What is a headless server, and why does it matter?
+
+* A **headless system** is a server that operates without a physical display or GUI.
+* Since cloud infrastructure runs headlessly, direct command-line access is required instead of a remote desktop.
+* **SSH key authentication** is the standard way to securely access a headless server's command line, without needing the overhead of remote desktop software.
+
+### Q3: What is Test-Driven Development (TDD), and what is the Red-Green-Refactor cycle?
+
+* TDD is a development approach where tests are written *before* the implementation code.
+* The cycle has three steps:
+  1. **RED:** Write a failing test before writing any implementation code.
+  2. **GREEN:** Write the minimal code needed to make that test pass.
+  3. **REFACTOR:** Clean up the code while keeping all tests passing.
+* Writing tests first acts as a functional specification, clarifying requirements early in the process.
+
+### Q4: Why shouldn't you force-stop an active thread?
+
+* Force-stopping a thread while it's running risks corrupting shared memory, since the thread may be mid-update on data other threads depend on.
+* The safer approach is using **graceful cancellation flags** — a shared flag that signals a background task to check at predefined checkpoints and stop itself safely, rather than being killed abruptly.
+
+---
+
+## Course Context
+
+Session 9 also included project reviews across the class, giving visibility into different approaches — from ASCII tree generators to interactive JavaFX shape drawers — reinforcing that Q1 above (text vs. pixel rendering) applies differently depending on each project's chosen output format.
